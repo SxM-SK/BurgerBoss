@@ -1,0 +1,950 @@
+@charset "UTF-8";
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media (max-width: 682px) {
+  nav {
+    display: none;
+  }
+  .section {
+    background-position: center;
+  }
+}
+
+@media (max-width: 923px) {
+  .contact {
+    background-color: yellow;
+    height: 800px;
+  }
+}
+
+body {
+  max-width: 1170px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+header {
+  height: 70px;
+  background-color: #1b2222;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  top: 0;
+  max-width: 1170px;
+  width: 100%;
+  z-index: 9999;
+}
+
+.logo {
+  width: 40px;
+}
+
+.logo1 {
+  width: 165px;
+  margin-left: 0px;
+  margin-bottom: 5px;
+}
+
+.nav a {
+  color: white;
+  margin-right: 20px;
+  font-size: 20px;
+}
+
+.nav li:hover {
+  background-color: yellow;
+}
+
+.nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.nav ul :hover {
+  color: black;
+  padding: 5px;
+  margin-right: 40px;
+  border-radius: 15%;
+  font-size: 24px;
+  margin-left: 40px;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.header-wraper {
+  display: none;
+}
+
+@media (max-width: 682px) {
+  .header-wraper {
+    display: block;
+    height: 1px;
+  }
+}
+
+.container {
+  height: 100vh;
+  position: relative;
+}
+
+/* რაც გამოდის ბურგერ დაჭერის დროს - overlay */
+.nav-bar {
+  position: absolute;
+  background-color: #e4e404;
+  top: 0;
+  right: 100%;
+  height: 601px;
+  width: 250px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 999999;
+  margin-top: 71px;
+}
+
+.toggle {
+  left: 0;
+}
+
+/* listebis gastilva */
+.nav-list-item {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.nav-link {
+  color: #fff;
+  font-size: 30px;
+}
+
+.nav-link:hover {
+  color: black;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+/* Burger icon styles */
+.toggle-menu {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 2px 2px 2px 3px;
+  cursor: pointer;
+}
+
+.line {
+  width: 100%;
+  height: 3px;
+  background-color: #e4e404;
+  -webkit-transition: -webkit-transform 0.2s ease-out;
+  transition: -webkit-transform 0.2s ease-out;
+  transition: transform 0.2s ease-out;
+  transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out;
+}
+
+.toggle .line1 {
+  -webkit-transform: scale(0.9) rotate(-45deg) translate(-6px, 4px);
+          transform: scale(0.9) rotate(-45deg) translate(-6px, 4px);
+}
+
+.toggle .line2 {
+  display: none;
+}
+
+.toggle .line3 {
+  -webkit-transform: scale(0.9) rotate(45deg) translate(-6px, -4px);
+          transform: scale(0.9) rotate(45deg) translate(-6px, -4px);
+}
+
+.section {
+  background-image: url("../imiges/background.jpeg");
+  height: 640px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 150px;
+  padding-bottom: 10px;
+}
+
+@media (max-width: 500px) {
+  .section {
+    height: 700px;
+  }
+}
+
+.section p {
+  font-size: 35px;
+  color: #e4e404;
+  margin-left: 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.sectiondiv1 {
+  max-width: 300px;
+  width: 100%;
+}
+
+.sectiondiv2 {
+  margin-left: 50px;
+}
+
+.sectiondiv2 h3 {
+  font-size: 30px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  color: #e4e404;
+}
+
+.sectiondiv2 h4 {
+  font-size: 30px;
+  color: #e4e404;
+}
+
+.clock {
+  width: 50px;
+}
+
+.ff {
+  max-width: 1170px;
+  width: 100%;
+  margin-top: 130px;
+}
+
+.menusection {
+  background-color: yellow;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.menudivs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding-top: 100px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.bg {
+  max-width: 250px;
+  width: 100%;
+}
+
+.div1 {
+  margin-top: 30px;
+  border: solid 2px white;
+  padding-bottom: 10px;
+  max-width: 250px;
+  width: 100%;
+}
+
+.div1 h2 {
+  font-size: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.div1 h3 {
+  font-size: 20px;
+  margin-top: 7px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.div1 a {
+  margin-left: 8px;
+  color: black;
+}
+
+.div1 h4 {
+  max-width: 250px;
+  width: 100%;
+  font-size: 15px;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+.div2 {
+  margin-top: 30px;
+  border: solid 2px white;
+  padding-bottom: 10px;
+  max-width: 250px;
+  width: 100%;
+}
+
+.div2 h2 {
+  font-size: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.div2 h3 {
+  font-size: 20px;
+  margin-top: 7px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.div2 a {
+  margin-left: 8px;
+  color: black;
+}
+
+.div2 h4 {
+  max-width: 250px;
+  width: 100%;
+  font-size: 15px;
+  margin-top: 10px;
+  padding: 5px;
+}
+
+.div3 {
+  margin-top: 30px;
+  border: solid 2px white;
+  padding-bottom: 10px;
+  max-width: 250px;
+  width: 100%;
+}
+
+.div3 h2 {
+  font-size: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.div3 h3 {
+  font-size: 20px;
+  margin-top: 7px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.div3 a {
+  margin-left: 8px;
+  color: black;
+}
+
+.div3 h4 {
+  max-width: 250px;
+  width: 100%;
+  font-size: 15px;
+  margin-top: 10px;
+  padding: 5px;
+}
+
+.menudivs2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.sc2div1 {
+  margin-top: 30px;
+  border: solid 2px white;
+  padding-bottom: 10px;
+  max-width: 250px;
+  width: 100%;
+}
+
+.sc2div1 h2 {
+  font-size: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sc2div1 h3 {
+  font-size: 20px;
+  margin-top: 7px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sc2div1 a {
+  margin-left: 8px;
+  color: black;
+}
+
+.sc2div1 h4 {
+  max-width: 250px;
+  width: 100%;
+  font-size: 15px;
+  margin-top: 10px;
+  padding: 5px;
+}
+
+.sc2div2 {
+  margin-top: 30px;
+  border: solid 2px white;
+  padding-bottom: 10px;
+  max-width: 250px;
+  width: 100%;
+}
+
+.sc2div2 h2 {
+  padding: 7px;
+  font-size: 22px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sc2div2 h3 {
+  font-size: 20px;
+  margin-top: 7px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sc2div2 a {
+  margin-left: 8px;
+  color: black;
+}
+
+.sc2div2 h4 {
+  max-width: 250px;
+  width: 100%;
+  font-size: 15px;
+  margin-top: 10px;
+  padding: 5px;
+}
+
+.sec2div3 {
+  margin-top: 30px;
+  border: solid 2px white;
+  padding-bottom: 10px;
+  max-width: 250px;
+  width: 100%;
+}
+
+.sec2div3 h2 {
+  font-size: 27px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sec2div3 h3 {
+  font-size: 20px;
+  margin-top: 7px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sec2div3 a {
+  margin-left: 8px;
+  color: black;
+}
+
+.sec2div3 h4 {
+  max-width: 250px;
+  width: 100%;
+  font-size: 15px;
+  margin-top: 10px;
+  padding: 5px;
+}
+
+.menudivs3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.sc3div1 {
+  margin-top: 30px;
+  border: solid 2px white;
+  padding-bottom: 10px;
+  max-width: 250px;
+  width: 100%;
+}
+
+.sc3div1 h2 {
+  font-size: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sc3div1 h3 {
+  font-size: 20px;
+  margin-top: 7px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sc3div1 a {
+  margin-left: 8px;
+  color: black;
+}
+
+.sc3div1 h4 {
+  max-width: 250px;
+  width: 100%;
+  font-size: 15px;
+  margin-top: 10px;
+  padding: 5px;
+}
+
+.sc3div2 {
+  margin-top: 30px;
+  border: solid 2px white;
+  padding-bottom: 10px;
+  max-width: 250px;
+  width: 100%;
+}
+
+.sc3div2 h2 {
+  font-size: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sc3div2 h3 {
+  font-size: 20px;
+  margin-top: 7px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sc3div2 a {
+  margin-left: 8px;
+  color: black;
+}
+
+.sc3div2 h4 {
+  max-width: 250px;
+  width: 100%;
+  font-size: 15px;
+  margin-top: 10px;
+  padding: 5px;
+}
+
+.sc3div3 {
+  margin-top: 30px;
+  border: solid 2px white;
+  padding-bottom: 10px;
+  max-width: 250px;
+  width: 100%;
+}
+
+.sc3div3 h2 {
+  font-size: 23px;
+  margin-left: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sc3div3 h3 {
+  font-size: 20px;
+  margin-top: 7px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sc3div3 a {
+  margin-left: 8px;
+  color: black;
+}
+
+.sc3div3 h4 {
+  max-width: 250px;
+  width: 100%;
+  font-size: 15px;
+  margin-top: 10px;
+  padding: 5px;
+}
+
+.menudivs4 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.sc4div1 {
+  margin-top: 30px;
+  border: solid 2px white;
+  padding-bottom: 10px;
+  max-width: 250px;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.sc4div1 h2 {
+  font-size: 23px;
+  margin-left: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sc4div1 h3 {
+  font-size: 20px;
+  margin-top: 7px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sc4div1 a {
+  margin-left: 8px;
+  color: black;
+}
+
+.sc4div1 h4 {
+  max-width: 250px;
+  width: 100%;
+  font-size: 15px;
+  margin-top: 10px;
+  padding: 5px;
+}
+
+.img {
+  max-width: 230;
+  width: 100%;
+}
+
+.contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: yellow;
+  height: 640px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+@media (max-width: 923px) {
+  .contact {
+    background-color: yellow;
+    height: 827px;
+    max-width: 1170px;
+    width: 100%;
+  }
+}
+
+.contact a {
+  color: black;
+  font-size: 25px;
+  margin-left: 8px;
+}
+
+@media (max-width: 340px) {
+  .contact a {
+    color: black;
+    font-size: 19px;
+    margin-left: 8px;
+  }
+}
+
+.contactdiv {
+  margin-top: 15px;
+}
+
+.contactdiv1 {
+  margin-top: 90px;
+}
+
+.map {
+  max-width: 600px;
+  width: 100%;
+  margin-top: 70px;
+}
+
+iframe {
+  margin-top: 40px;
+  max-width: 600px;
+  width: 100%;
+}
+
+.ff1 {
+  max-width: 1170px;
+  width: 100%;
+  margin-top: 52px;
+}
+
+.about {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: yellow;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  height: 640px;
+}
+
+.video {
+  max-width: 450px;
+  width: 100%;
+  margin-top: 100px;
+  border: 2px solid white;
+}
+
+.ff2 {
+  max-width: 1170px;
+  width: 100%;
+  margin-top: 257px;
+}
+/*# sourceMappingURL=global.css.map */

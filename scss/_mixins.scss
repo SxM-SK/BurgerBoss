@@ -1,0 +1,14 @@
+@mixin flex-proops ($justify,$align) {
+    display: flex;
+    justify-content:$justify;
+    align-items:$align;
+}
+@mixin width {
+    max-width: 1170px;
+    width: 100%;
+    margin: 0 auto;
+}
+@mixin bgimg {
+    max-width: 250px;
+    width: 100%;
+}
